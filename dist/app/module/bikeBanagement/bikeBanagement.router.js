@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bikeRouter = void 0;
+const express_1 = require("express");
+const bikeBanagement_controller_1 = require("./bikeBanagement.controller");
+const router = (0, express_1.Router)();
+router.post('/', bikeBanagement_controller_1.BikeController.addedBikeController);
+router.get('/', bikeBanagement_controller_1.BikeController.getAllBikeController);
+router.get('/:id', bikeBanagement_controller_1.BikeController.getSingleBikeController);
+exports.bikeRouter = router;
