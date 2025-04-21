@@ -13,7 +13,7 @@ app.get('/', (req: Request, res: Response) => {
     res.send("server is running")
 })
 
-app.use(`/api/v1`, router)
+app.use(`/api`, router)
 app.use(globalErrorHandeler)
 app.use((req:Request,res:Response,next:NextFunction)=>{
     res.status(httpStatus.NOT_FOUND).json({

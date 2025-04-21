@@ -14,7 +14,7 @@ app.use(express_1.default.json());
 app.get('/', (req, res) => {
     res.send("server is running");
 });
-app.use(`/api/v1`, router_1.default);
+app.use(`/api`, router_1.default);
 app.use(globalErrorHandeler_1.default);
 app.use((req, res, next) => {
     res.status(http_status_1.default.NOT_FOUND).json({
