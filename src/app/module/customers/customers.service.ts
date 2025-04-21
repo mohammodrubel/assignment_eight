@@ -1,7 +1,7 @@
-import { Customer } from "../../../generated/prisma";
+
 import { prisma } from "../../shared/prisma";
 
-const createNewCustomer = async (data: Customer) => {
+const createNewCustomer = async (data: any) => {
     const result = await prisma.customer.create(
         {
             data: data
@@ -25,7 +25,7 @@ const getSingleCustomers = async (id: string) => {
     )
     return result
 }
-const updateCustomers = async (id: string, data: Partial<Customer>) => {
+const updateCustomers = async (id: string, data: any) => {
     const result = await prisma.customer.update(
         {
             where: {

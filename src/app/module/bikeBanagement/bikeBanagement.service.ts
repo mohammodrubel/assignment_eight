@@ -1,7 +1,7 @@
-import { Bike } from "../../../generated/prisma";
+
 import { prisma } from "../../shared/prisma";
 
-const bikeAddedService = async (data:Bike)=>{
+const bikeAddedService = async (data:any)=>{
     const customers = await prisma.customer.findUniqueOrThrow(
         {
             where:{

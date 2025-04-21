@@ -1,7 +1,7 @@
-import { Service } from "../../../generated/prisma"
+
 import { prisma } from "../../shared/prisma"
 
-const createServiceRecord = async (data: Service) => {
+const createServiceRecord = async (data: any) => {
     const isBikeExist = await prisma.bike.findUniqueOrThrow(
         {
             where: {
@@ -32,7 +32,7 @@ const getSingleService = async (id: string) => {
     return reuslt
 }
 
-const updateService = async (id: string, data: Service) => {
+const updateService = async (id: string, data: any) => {
     const result = await prisma.service.update(
         {
             where: {
